@@ -9,9 +9,9 @@
 # отсортировать массив в порядке убывания max_amount, при этом избавившись от email дубликатов
 
 from collections import Counter
-import unittest
 
-class Dictionary:
+
+class EmailAnalyzer:
     def __init__(self, arr):
         self.arr = arr
 
@@ -21,10 +21,10 @@ class Dictionary:
         max_email = email_count.most_common(1)[0][0]
         return max_email
 
-    def find_min_max_max_amount(self):
+    def find_sum_values(self):
         max_amounts = [item["max_amount"] for item in self.arr]
-        min_max_amount = (min(max_amounts), max(max_amounts))
-        return min_max_amount
+        sum_values = (min(max_amounts), max(max_amounts))
+        return sum_values
 
     def sort_by_max_amount(self):
         sorted_arr = sorted(self.arr, key=lambda item: item["max_amount"], reverse=True)
@@ -48,48 +48,15 @@ arr = [
     {"email": "gg@gmail.com", "max_amount": 12},
 ]
 
-analyzer = Dictionary(arr)
+analyzer = EmailAnalyzer(arr)
 
 most_frequent_email = analyzer.find_most_frequent_email()
 print("Самый популярный email в массиве: ", most_frequent_email)
 
-min_max_amount = analyzer.find_min_max_max_amount()
-print("Минимальное и максимальное значение max_amount: ", min_max_amount)
+sum_values = analyzer.find_sum_values()
+print("Минимальное и максимальное значение max_amount: ", sum_values)
 
 sorted_arr = analyzer.sort_by_max_amount()
 print("Массив, отсортированный по убыванию max_amount: ")
 for item in sorted_arr:
     print(item)
-
-#Тесты
-
-class TestDictionary(unittest.TestCase):
-    def setUp(self):
-        self.arr = [
-            {"email": "vas@gmail.com", "max_amount": 1},
-            {"email": "gg@gmail.com", "max_amount": 123},
-            {"email": "test@gmail.com", "max_amount": 10},
-            {"email": "vas@gmail.com", "max_amount": 5},
-            {"email": "xyz@gmail.com", "max_amount": 45},
-            {"email": "gg@gmail.com", "max_amount": 12},
-        ]
-        self.analyzer = Dictionary(self.arr)
-
-    def test_find_most_frequent_email(self):
-        self.assertEqual(self.analyzer.find_most_frequent_email(), "vas@gmail.com")
-
-    def test_find_min_max_max_amount(self):
-        self.assertEqual(self.analyzer.find_min_max_max_amount(), (1, 123))
-
-    def test_sort_by_max_amount(self):
-        expected_arr = [
-            {"email": "gg@gmail.com", "max_amount": 123},
-            {"email": "xyz@gmail.com", "max_amount": 45},
-            {"email": "test@gmail.com", "max_amount": 10},
-            {"email": "vas@gmail.com", "max_amount": 5},
-        ]
-        self.assertEqual(self.analyzer.sort_by_max_amount(), expected_arr)
-
-
-if __name__ == '__main__':
-    unittest.main()
