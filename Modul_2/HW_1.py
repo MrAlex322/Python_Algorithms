@@ -50,3 +50,5 @@ sorted_arr = analyzer.sort_by_max_amount()
 print("Массив, отсортированный по убыванию max_amount: ")
 for item in sorted_arr:
     print(item)
+
+###
