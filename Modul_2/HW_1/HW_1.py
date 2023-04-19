@@ -1,6 +1,17 @@
+# Даны массив arr, каждый из элементов массива хэшмапа.
+#
+# Например:
+# arr = [{email: “vas@gmail.com”, max_amount: 1}, {email: “gg@gmail.com”, max_amount: 123} … ]
+#
+# Требуется найти
+# самый популярный email в массиве
+# максимальное и минимальное значение max_amount
+# отсортировать массив в порядке убывания max_amount, при этом избавившись от email дубликатов
+
+
 from collections import Counter
 
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
 class EmailAnalyzer:
     def __init__(self, arr):
         self.arr = arr
@@ -51,4 +62,3 @@ print("Массив, отсортированный по убыванию max_am
 for item in sorted_arr:
     print(item)
 
-###

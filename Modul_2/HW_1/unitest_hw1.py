@@ -1,5 +1,5 @@
 import unittest
-from HW_1 import EmailAnalyzer
+from Modul_2.HW_1.HW_1 import EmailAnalyzer
 
 # Тесты
 
@@ -24,7 +24,7 @@ class TestEmailAnalyzer(unittest.TestCase):
     def test_sort_by_max_amount(self):
         expected_arr = [
             {"email": "gg@gmail.com", "max_amount": 123},
-            {"email": "xyz@gmail.com", "max_amount": 45}, cle
+            {"email": "xyz@gmail.com", "max_amount": 45},
             {"email": "test@gmail.com", "max_amount": 10},
             {"email": "vas@gmail.com", "max_amount": 5},
         ]
