@@ -1,5 +1,5 @@
 import unittest
-from Modul_2.HW_2.HW_2 import AnagramGrouper
+from Modul_2.HW_2.Pr_1.HW_2 import AnagramGrouper
 
 class TestAnagramGrouper(unittest.TestCase):
 
