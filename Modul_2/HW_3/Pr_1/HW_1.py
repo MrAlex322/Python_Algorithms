@@ -16,34 +16,34 @@
 
 class MyQueue:
     def __init__(self):
-        self.stack1 = []  # стек для добавления элементов
-        self.stack2 = []  # стек для удаления элементов
+        self.stack_to_add = []  # стек для добавления элементов
+        self.stack_to_remove = []  # стек для удаления элементов
 
     def push(self, x):
-        self.stack1.append(x)
+        self.stack_to_add.append(x)
 
     def pop(self):
         if self.empty():
             return None
-        if not self.stack2:
-            while self.stack1:
-                self.stack2.append(self.stack1.pop())
-        return self.stack2.pop()
+        if not self.stack_to_remove:
+            while self.stack_to_add:
+                self.stack_to_remove.append(self.stack_to_add.pop())
+        return self.stack_to_remove.pop()
 
     def peek(self):
         if self.empty():
             return None
-        if not self.stack2:
-            while self.stack1:
-                self.stack2.append(self.stack1.pop())
-        return self.stack2[-1]
+        if not self.stack_to_remove:
+            while self.stack_to_add:
+                self.stack_to_remove.append(self.stack_to_add.pop())
+        return self.stack_to_remove[-1]
 
     def empty(self):
-        return not self.stack1 and not self.stack2
+        return not self.stack_to_add and not self.stack_to_remove
 
 
     def print_queue1(self):
-        for item in self.stack1:
+        for item in self.stack_to_add:
             print(item)
 
 
@@ -51,7 +51,7 @@ class MyQueue:
         if self.empty():
             print("Очередь пуста")
             return
-        queue = self.stack2[::-1] + self.stack1
+        queue = self.stack_to_remove[::-1] + self.stack_to_add
         print(queue)
 
 
