@@ -1,4 +1,5 @@
 import unittest
+from HW_1 import MyQueue
 
 class TestMyQueue(unittest.TestCase):
     def test_push_and_peek(self):

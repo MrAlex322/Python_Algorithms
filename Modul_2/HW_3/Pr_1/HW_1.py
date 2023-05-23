@@ -60,23 +60,12 @@ q = MyQueue()
 q.push(1)
 q.push(2)
 q.push(3)
-
-q.print_queue()  # [1, 2, 3]
-
-print(q.peek())  # 1
-
-q.print_queue()  # [1, 2, 3]
-
-print(q.pop())   # 1
-print(q.pop())   # 2
-
-q.print_queue()  #3
-
-print(q.pop())   #3
-
-q.print_queue()  #Очередь пуста
-
-print(q.empty()) #True
-
+q.push(4)
+q.print_queue()
+print(q.pop())
+q.print_queue()
+q.push(44)
+print(q.pop())
+q.print_queue()
 
 
