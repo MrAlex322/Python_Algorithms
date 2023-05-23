@@ -12,7 +12,8 @@
 # Нужно использовать только стандартные операции стека, что означает, что допустимы только операции push to top,
 # peek/pop сверху, size и is empty.
 # Можно использовать list для имитации стека
-
+# Time Complexity = O(n), где n - количество элементов в стеке.
+# Memory Complexity = O(n), где n - количество элементов в стеках self.stack1 и self.stack2.
 
 class MyQueue:
     def __init__(self):
@@ -55,28 +56,28 @@ class MyQueue:
         print(queue)
 
 
-q = MyQueue()
+queue = MyQueue()
 
-q.push(1)
-q.push(2)
-q.push(3)
+queue.push(1)
+queue.push(2)
+queue.push(3)
 
-q.print_queue()  # [1, 2, 3]
+queue.print_queue()  # [1, 2, 3]
 
-print(q.peek())  # 1
+queuer.print(q.peek())  # 1
 
-q.print_queue()  # [1, 2, 3]
+queue.print_queue()  # [1, 2, 3]
 
-print(q.pop())   # 1
-print(q.pop())   # 2
+print(queue.pop())   # 1
+print(queue.pop())   # 2
 
-q.print_queue()  #3
+queue.print_queue()  #3
 
-print(q.pop())   #3
+print(queue.pop())   #3
 
-q.print_queue()  #Очередь пуста
+queue.print_queue()  #Очередь пуста
 
-print(q.empty()) #True
+print(queue.empty()) #True
 
 
 
