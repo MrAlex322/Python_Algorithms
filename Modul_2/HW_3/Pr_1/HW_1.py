@@ -41,12 +41,6 @@ class MyQueue:
     def empty(self):
         return not self.stack1 and not self.stack2
 
-
-    def print_queue1(self):
-        for item in self.stack1:
-            print(item)
-
-
     def print_queue(self):
         if self.empty():
             print("Очередь пуста")
@@ -55,28 +49,15 @@ class MyQueue:
         print(queue)
 
 
-q = MyQueue()
+queue_items = MyQueue()
 
-q.push(1)
-q.push(2)
-q.push(3)
-
-q.print_queue()  # [1, 2, 3]
-
-print(q.peek())  # 1
-
-q.print_queue()  # [1, 2, 3]
-
-print(q.pop())   # 1
-print(q.pop())   # 2
-
-q.print_queue()  #3
-
-print(q.pop())   #3
-
-q.print_queue()  #Очередь пуста
-
-print(q.empty()) #True
-
-
-
+queue_items.push(1)
+queue_items.push(2)
+queue_items.push(3)
+queue_items.push(4)
+queue_items.print_queue()
+print(queue_items.pop())
+queue_items.print_queue()
+queue_items.push(44)
+print(queue_items.pop())
+queue_items.print_queue()
