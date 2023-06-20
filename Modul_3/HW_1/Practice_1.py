@@ -6,6 +6,8 @@
 # Ответ: 2
 # arr = [1,3,5,6], target = 2
 # Ответ: 1
+# time complexity - O(log n)
+# memory complexity - O(1).
 
 class BinarySearch:
     def search_insert(self, arr, target):
