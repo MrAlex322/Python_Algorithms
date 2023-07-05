@@ -5,11 +5,16 @@ import asyncio
 import aiofiles
 
 async def read_file(file_path):
-    async with aiofiles.open(file_path, mode='r') as file:
-        content = await file.read()
-        print(f'Content of file {file_path}:')
-        print(content)
-        print()
+    try:
+        async with aiofiles.open(file_path, mode='r') as file:
+            content = await file.read()
+            print(f'Content of file {file_path}:')
+            print(content)
+            print()
+    except FileNotFoundError:
+        print(f'File {file_path} not found.')
+    except Exception as e:
+        print(f'Error occurred while reading file {file_path}: {str(e)}')
 
 async def read_files(file_paths):
     tasks = []
@@ -20,10 +25,14 @@ async def read_files(file_paths):
 
 async def main():
     file_paths = [
-        r'C:\Users\danil\OneDrive\Рабочий стол\asyn\1.txt',
-        r'C:\Users\danil\OneDrive\Рабочий стол\asyn\2.txt',
-        r'C:\Users\danil\OneDrive\Рабочий стол\asyn\3.txt'
+        r'1',
+        r'2',
+        r'3'
     ]
     await read_files(file_paths)
 
-asyncio.run(main())
+try:
+    asyncio.run(main())
+except Exception as e:
+    print(f'Error occurred: {str(e)}')
+
